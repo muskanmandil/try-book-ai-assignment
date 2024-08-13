@@ -1,0 +1,75 @@
+.theme-toggle-btn {
+  position: fixed;
+  right: 2vw;
+  bottom: 2vh;
+  z-index: 5;
+}
+
+/* The switch */
+.theme-switch {
+  width: 4.7rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  /* background: var(--border-light); */
+  background: #000;
+  border-radius: 3rem;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+label i {
+  font-size: 1rem;
+  position: absolute;
+  transition: 0.3s;
+}
+
+label .fa-sun {
+  color: gold;
+  left: 50px;
+}
+
+label .fa-moon {
+  color: #fff;
+  right: 50px;
+  opacity: 0;
+}
+
+label .ball {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.theme-toggle-btn input[type="checkbox"]:checked + label .fa-sun {
+  opacity: 0;
+}
+
+.theme-toggle-btn input[type="checkbox"]:checked + label .fa-moon {
+  opacity: 1;
+}
+
+.theme-toggle-btn input[type="checkbox"]:checked + label .ball {
+  transform: translateX(40px);
+  background: var(--secondary-color);
+}
+
+/* Hide the default checkbox */
+.theme-toggle-btn input {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .theme-toggle-btn {
+    transform: scale(0.9);
+  }
+}
